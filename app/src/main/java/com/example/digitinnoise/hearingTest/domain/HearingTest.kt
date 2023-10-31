@@ -1,4 +1,4 @@
-package com.example.digitinnoise.hearingTest
+package com.example.digitinnoise.hearingTest.domain
 
 class HearingTest(tripletGenerator: TripletGenerator) : Test {
     private var currentRoundIndex = 0

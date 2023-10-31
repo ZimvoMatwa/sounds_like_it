@@ -1,7 +1,6 @@
-package com.example.digitinnoise
+package com.example.digitinnoise.hearingTest.domain
 
-import com.example.digitinnoise.hearingTest.AudioPlayer
-import com.example.digitinnoise.hearingTest.HearingTestNoise
+import com.example.digitinnoise.R
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

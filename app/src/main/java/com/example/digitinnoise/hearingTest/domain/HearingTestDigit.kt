@@ -1,9 +1,8 @@
-package com.example.digitinnoise.hearingTest
+package com.example.digitinnoise.hearingTest.domain
 
-import com.example.digitinnoise.Digit
 import com.example.digitinnoise.R
 
-class Digit(private val digit: Int) : Digit {
+class HearingTestDigit(private val digit: Int) : Digit {
     private var player: AudioPlayer? = null
 
     override fun play(audioPlayer: AudioPlayer) {

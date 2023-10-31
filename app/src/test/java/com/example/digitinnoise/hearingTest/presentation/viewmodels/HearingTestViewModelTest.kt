@@ -1,11 +1,9 @@
-package com.example.digitinnoise
+package com.example.digitinnoise.hearingTest.presentation.viewmodels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
-import com.example.digitinnoise.hearingTest.AudioPlayer
-import com.example.digitinnoise.hearingTest.HearingTestViewModel
-import com.example.digitinnoise.hearingTest.HearingTestViewState
-import com.example.digitinnoise.hearingTest.Round
+import com.example.digitinnoise.hearingTest.domain.AudioPlayer
+import com.example.digitinnoise.hearingTest.domain.Round
 import com.example.digitinnoise.utils.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
@@ -26,7 +24,7 @@ class HearingTestViewModelTest {
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
-    val hearingTest = mockk<com.example.digitinnoise.hearingTest.Test>()
+    val hearingTest = mockk<com.example.digitinnoise.hearingTest.domain.Test>()
     val audioPlayer = mockk<AudioPlayer>()
 
     @Before

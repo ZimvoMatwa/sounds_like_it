@@ -1,4 +1,4 @@
-package com.example.digitinnoise
+package com.example.digitinnoise.hearingTest.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import com.example.digitinnoise.R
 import com.example.digitinnoise.databinding.FragmentHomeScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 

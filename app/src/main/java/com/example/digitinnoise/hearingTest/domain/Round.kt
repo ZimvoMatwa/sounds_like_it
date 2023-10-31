@@ -1,4 +1,4 @@
-package com.example.digitinnoise.hearingTest
+package com.example.digitinnoise.hearingTest.domain
 
 interface Round {
     suspend fun play(audioPlayer: AudioPlayer)

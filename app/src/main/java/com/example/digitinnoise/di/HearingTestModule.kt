@@ -1,12 +1,12 @@
 package com.example.digitinnoise.di
 
 import android.content.Context
-import com.example.digitinnoise.hearingTest.AndroidAudioPlayer
-import com.example.digitinnoise.hearingTest.AudioPlayer
-import com.example.digitinnoise.hearingTest.HearingTest
-import com.example.digitinnoise.hearingTest.Test
-import com.example.digitinnoise.hearingTest.TripletGenerator
-import com.example.digitinnoise.hearingTest.UniqueTripletGenerator
+import com.example.digitinnoise.hearingTest.domain.AndroidAudioPlayer
+import com.example.digitinnoise.hearingTest.domain.AudioPlayer
+import com.example.digitinnoise.hearingTest.domain.HearingTest
+import com.example.digitinnoise.hearingTest.domain.Test
+import com.example.digitinnoise.hearingTest.domain.TripletGenerator
+import com.example.digitinnoise.hearingTest.domain.UniqueTripletGenerator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,7 +1,10 @@
-package com.example.digitinnoise.hearingTest
+package com.example.digitinnoise.hearingTest.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.digitinnoise.hearingTest.domain.AudioPlayer
+import com.example.digitinnoise.hearingTest.domain.Round
+import com.example.digitinnoise.hearingTest.domain.Test
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

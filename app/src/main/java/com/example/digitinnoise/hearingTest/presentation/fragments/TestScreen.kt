@@ -1,4 +1,4 @@
-package com.example.digitinnoise
+package com.example.digitinnoise.hearingTest.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.digitinnoise.databinding.FragmentTestScreenBinding
-import com.example.digitinnoise.hearingTest.HearingTestViewModel
+import com.example.digitinnoise.hearingTest.presentation.viewmodels.HearingTestViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
