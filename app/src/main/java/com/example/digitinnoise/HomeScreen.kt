@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.example.digitinnoise.databinding.FragmentHomeScreenBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeScreen : Fragment() {
     private lateinit var binding: FragmentHomeScreenBinding
 

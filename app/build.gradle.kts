@@ -40,6 +40,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -75,7 +79,7 @@ dependencies {
     testImplementation("io.mockk:mockk:${mockkVersion}")
 
     // Dagger Hilt
-    val hilt_version = "2.48.1"
+    val hilt_version = "2.46"
     implementation("com.google.dagger:hilt-android:$hilt_version")
     kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
     testImplementation("com.google.dagger:hilt-android-testing:$hilt_version")

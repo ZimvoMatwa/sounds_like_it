@@ -1,13 +1,20 @@
 package com.example.digitinnoise.hearingTest
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HearingTestViewModel(private val test: Test) : ViewModel() {
+@HiltViewModel
+class HearingTestViewModel @Inject constructor(
+    private val test: Test,
+    private val audioPlayer: AudioPlayer
+) : ViewModel() {
 
     private val _uiState: MutableStateFlow<HearingTestViewState> =
         MutableStateFlow(HearingTestViewState.Waiting)
