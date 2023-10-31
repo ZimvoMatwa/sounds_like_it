@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -71,4 +73,11 @@ dependencies {
     // mocking
     val mockkVersion = "1.13.8"
     testImplementation("io.mockk:mockk:${mockkVersion}")
+
+    // Dagger Hilt
+    val hilt_version = "2.48.1"
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
+    testImplementation("com.google.dagger:hilt-android-testing:$hilt_version")
+    kaptTest("com.google.dagger:hilt-compiler:$hilt_version")
 }
