@@ -29,9 +29,8 @@ class HearingTestModule {
     @Singleton
     fun provideHearingTest(
         tripletGenerator: TripletGenerator,
-        audioPlayer: AudioPlayer
     ): Test {
-        return HearingTest(tripletGenerator, audioPlayer)
+        return HearingTest(tripletGenerator)
     }
 
     @Provides

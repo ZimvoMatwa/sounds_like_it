@@ -1,7 +1,7 @@
 package com.example.digitinnoise
 
-import com.example.digitinnoise.hearingTest.Triplet
 import com.example.digitinnoise.hearingTest.HearingTest
+import com.example.digitinnoise.hearingTest.Triplet
 import com.example.digitinnoise.hearingTest.TripletGenerator
 import com.google.common.truth.Truth.assertThat
 import io.mockk.every

@@ -2,10 +2,10 @@ package com.example.digitinnoise.hearingTest
 
 import kotlin.random.Random
 
-class UniqueTripletGenerator(private val randomNumberGenerator: Random) {
+class UniqueTripletGenerator(private val randomNumberGenerator: Random): TripletGenerator {
     private val triplets = mutableListOf<Triplet>()
 
-    fun generate(size: Int): List<Triplet> {
+    override fun generate(size: Int): List<Triplet> {
         while (triplets.size < size) {
             val nextTriplet = Triplet(
                 randomNumberGenerator.nextInt(1, 9),

@@ -9,10 +9,10 @@ class HearingTest(tripletGenerator: TripletGenerator) : Test {
         triplets = tripletGenerator.generate(10).toMutableList()
     }
 
-    override fun nextRound(): Triplet {
+    override fun nextRound(): Round {
         val triplet = triplets.elementAt(currentRoundIndex)
         currentRoundIndex++
-        return triplet
+        return HearingTestRound(noise = HearingTestNoise(), triplet = triplet)
     }
 
     override fun rounds(): Int {
