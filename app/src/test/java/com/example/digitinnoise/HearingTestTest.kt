@@ -61,6 +61,18 @@ class HearingTestTest {
         hearingTest.answer("999")
         assertThat(hearingTest.difficulty()).isEqualTo(3)
     }
+
+    @Test
+    fun `the test score is a sum of all rounds`(){
+        hearingTest.nextRound()
+        hearingTest.answer("111")
+        hearingTest.nextRound()
+        hearingTest.answer("222")
+        hearingTest.nextRound()
+        hearingTest.answer("333")
+
+        assertThat(hearingTest.score()).isEqualTo(18)
+    }
 }
 
 

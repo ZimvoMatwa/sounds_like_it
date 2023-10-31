@@ -4,6 +4,7 @@ class HearingTest(tripletGenerator: TripletGenerator) : Test {
     private var currentRoundIndex = 0
     private var difficulty = 5
     private var triplets: MutableList<Triplet>
+    private var rounds: MutableList<Round> = mutableListOf()
 
     init {
         triplets = tripletGenerator.generate(10).toMutableList()
@@ -12,7 +13,9 @@ class HearingTest(tripletGenerator: TripletGenerator) : Test {
     override fun nextRound(): Round {
         val triplet = triplets.elementAt(currentRoundIndex)
         currentRoundIndex++
-        return HearingTestRound(noise = HearingTestNoise(difficulty), triplet = triplet)
+        val round = HearingTestRound(difficulty = difficulty, triplet = triplet)
+        rounds.add(round)
+        return round
     }
 
     override fun rounds(): Int {
@@ -24,10 +27,16 @@ class HearingTest(tripletGenerator: TripletGenerator) : Test {
     }
 
     override fun answer(answer: String) {
-        if (answer == triplets.elementAt(currentRoundIndex - 1).answer()) {
+        val currentRound = rounds.elementAt(currentRoundIndex - 1)
+        currentRound.answer(answer)
+        if (currentRound.answerIsCorrect()) {
             difficulty++
         } else {
             difficulty--
         }
+    }
+
+    override fun score(): Int {
+        return rounds.fold(0) { acc, round -> acc + round.score() }
     }
 }
