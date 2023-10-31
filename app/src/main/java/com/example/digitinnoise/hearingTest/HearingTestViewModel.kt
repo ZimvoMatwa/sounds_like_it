@@ -32,5 +32,5 @@ class HearingTestViewModel(private val test: Test) : ViewModel() {
 
 sealed class HearingTestViewState {
     object Waiting : HearingTestViewState()
-    data class Loaded(val round: Round) : HearingTestViewState()
+    data class Loaded(val triplet: Triplet) : HearingTestViewState()
 }

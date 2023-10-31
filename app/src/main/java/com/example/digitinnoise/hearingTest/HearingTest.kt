@@ -1,24 +1,22 @@
 package com.example.digitinnoise.hearingTest
 
-class HearingTest : Test {
-    private var rounds = mutableListOf<Round>()
+class HearingTest(tripletGenerator: TripletGenerator) : Test {
     private var currentRoundIndex = 0
     private var difficulty = 5
+    private var triplets: MutableList<Triplet>
 
     init {
-        for (i in 1..10){
-            rounds.add(
-                Round(Triplet(1,1,1))
-            )
-        }
+        triplets = tripletGenerator.generate(10).toMutableList()
     }
 
-    override fun nextRound(): Round {
-        return rounds.elementAt(currentRoundIndex)
+    override fun nextRound(): Triplet {
+        val triplet = triplets.elementAt(currentRoundIndex)
+        currentRoundIndex++
+        return triplet
     }
 
     override fun rounds(): Int {
-        return rounds.size
+        return triplets.size
     }
 
     override fun difficulty(): Int {
@@ -26,7 +24,7 @@ class HearingTest : Test {
     }
 
     override fun answer(answer: String) {
-        if (answer == rounds.elementAt(currentRoundIndex).answer()) {
+        if (answer == triplets.elementAt(currentRoundIndex - 1).answer()) {
             difficulty++
         } else {
             difficulty--
