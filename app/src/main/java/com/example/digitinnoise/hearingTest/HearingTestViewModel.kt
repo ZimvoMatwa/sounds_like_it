@@ -28,10 +28,11 @@ class HearingTestViewModel @Inject constructor(
         }
     }
 
-    fun submit() {
+    fun submit(answer: String) {
         viewModelScope.launch {
             _uiState.value = HearingTestViewState.Waiting
             delay(2000)
+            test.answer(answer)
             val round = test.nextRound()
             _uiState.value = HearingTestViewState.Loaded(round)
             round.play(audioPlayer)

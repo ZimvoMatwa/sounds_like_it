@@ -27,7 +27,8 @@ class TestScreen : Fragment() {
         viewModel.startTest()
 
         binding.submitButton.setOnClickListener {
-            viewModel.submit()
+            viewModel.submit(binding.answerInput.text.toString())
+            binding.answerInput.text?.clear()
         }
     }
 }
