@@ -12,7 +12,7 @@ class HearingTest(tripletGenerator: TripletGenerator) : Test {
     override fun nextRound(): Round {
         val triplet = triplets.elementAt(currentRoundIndex)
         currentRoundIndex++
-        return HearingTestRound(noise = HearingTestNoise(), triplet = triplet)
+        return HearingTestRound(noise = HearingTestNoise(difficulty), triplet = triplet)
     }
 
     override fun rounds(): Int {
