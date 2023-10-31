@@ -1,18 +1,24 @@
 package com.example.digitinnoise.hearingTest
 
 class HearingTest : Test {
-    private val rounds = listOf<Round>(
-        Round()
-    )
+    private var rounds = mutableListOf<Round>()
     private var currentRoundIndex = 0
     private var difficulty = 5
+
+    init {
+        for (i in 1..10){
+            rounds.add(
+                Round(Triplet(1,1,1))
+            )
+        }
+    }
 
     override fun nextRound(): Round {
         return rounds.elementAt(currentRoundIndex)
     }
 
     override fun rounds(): Int {
-        return 10
+        return rounds.size
     }
 
     override fun difficulty(): Int {
