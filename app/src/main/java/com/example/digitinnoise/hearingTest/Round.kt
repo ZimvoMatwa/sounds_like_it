@@ -1,3 +1,7 @@
 package com.example.digitinnoise.hearingTest
 
-class Round()
+class Round() {
+    fun answer(): String {
+        return "111"
+    }
+}
